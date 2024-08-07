@@ -11,3 +11,10 @@ for i in range (len(vector)):
         result[i] += vector[i] * gate1[i][k]
 
 print(result)
+
+#A = random.choice(gates)
+#B = random.choice(gates)
+
+#gates_rand = [B,A]
+
+#output = rc.runCircuit(input,gates_rand)
