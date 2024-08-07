@@ -1,3 +1,0 @@
-﻿# scientific_computing
-
-test
