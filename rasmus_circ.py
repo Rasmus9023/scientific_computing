@@ -1,6 +1,27 @@
 import numpy as np
 import math as mt
 import cmath
+import scipy.integrate as integrate
+import qutip as qt
+
+class SHO:
+#    def Wigner(x,p):
+#        1/(2*mt.pi) * integrate.quad(mt.exp(complex(0,y*p))*)
+    
+    def RaiseOp(n):
+        return mt.sqrt(n+1)
+
+    def LowerOp(n):
+        return mt.sqrt(n)
+    
+    def InitFock(n):
+        return qt.core.states.basis(n)
+
+    def PosOp(n):
+        return (SHO.LowerOp(n)+SHO.RaiseOp(n))/mt.sqrt(2)
+    
+    def MomentOp(n):
+        return complex(0,(SHO.RaiseOp(n)-SHO.LowerOp(n)))/mt.sqrt(2)
 
 class Gatedict:
     Hadamard = np.array([[1/mt.sqrt(2),1/mt.sqrt(2)],[1/mt.sqrt(2),-1/mt.sqrt(2)]])
