@@ -18,3 +18,21 @@ print(result)
 #gates_rand = [B,A]
 
 #output = rc.runCircuit(input,gates_rand)
+
+def RaiseOp(state):
+    posi = np.argwhere(state==1)
+    if posi==len(state)-1:
+        return 0
+    else:
+        state[posi]=0
+        state[posi+1]=1
+    return [mt.sqrt(posi+1)*i for i in state]
+
+def LowerOp(state):
+    posi = np.argwhere(state==1)
+    if posi==0:
+        return 0
+    else:
+        state[posi]=0
+        state[posi-1]=1
+    return state
