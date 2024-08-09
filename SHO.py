@@ -47,3 +47,12 @@ def MomentOp(N):
 
 def WignerElement(m,n,x,p):
     return 1/mt.pi * mt.exp(-x**2-p**2) * (-1)**n * (x - complex(0,p))**(m-n) * mt.sqrt(2**(m-n)*mt.factorial(n)/mt.factorial(m)) * genlaguerre(n,m-n) * (2*x**2+2*p**2)
+
+def StateOp(m,n,alpha):
+    mt.exp(-np.linalg.norm(alpha)**2) * (alpha**m * (np.conjugate(alpha))**n)/mt.sqrt(mt.factorial(m)*mt.factorial(n))
+
+def Wigner(x,p,M,N,alpha):
+    sum = 0
+    for m in M:
+        for n in N:
+            sum += StateOp(m,n,alpha)*WignerElement(m,n,x,p)
