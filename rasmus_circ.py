@@ -5,9 +5,7 @@ import scipy.integrate as integrate
 import qutip as qt
 
 class SHO:
-#    def Wigner(x,p):
-#        1/(2*mt.pi) * integrate.quad(mt.exp(complex(0,y*p))*)
-    
+ 
     def RaiseOp(n):
         return mt.sqrt(n+1)
 
