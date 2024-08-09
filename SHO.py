@@ -45,5 +45,5 @@ def MomentOp(N):
 
 # We can apply the Position- and momentum operator as 'print(MomentOp(N))'
 
-def Wigner(m,n,x,p):
-    1/mt.pi * mt.exp(-x**2-p**2) * (-1)**n * (x - complex(0,p))**(m-n) * mt.sqrt(2**(m-n)*mt.factorial(n)/mt.factorial(m)) * genlaguerre(n,m-n) * (2*x**2+2*p**2)
+def WignerElement(m,n,x,p):
+    return 1/mt.pi * mt.exp(-x**2-p**2) * (-1)**n * (x - complex(0,p))**(m-n) * mt.sqrt(2**(m-n)*mt.factorial(n)/mt.factorial(m)) * genlaguerre(n,m-n) * (2*x**2+2*p**2)
